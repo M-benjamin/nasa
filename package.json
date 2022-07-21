@@ -14,7 +14,10 @@
     "deploy": "npm-run-all --sequential build server",
     "deploy-cluster": "npm-run-all --sequential build server-cluster",
     "dev": "npm-run-all --parallel server client",
-    "test": "npm run test --prefix client && npm run test --prefix server"
+    "test-old": "npm run test --prefix client && npm run test --prefix server",
+    "test-client": "npm run test --prefix client",
+    "test-server": "npm run test --prefix server",
+    "test": "npm-run-all --sequential test-client test-server"
   },
   "keywords": [],
   "author": "",
