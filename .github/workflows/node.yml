@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Create .env file
+        uses: ozaytsev86/create-env-file@v1
+        with:
+          ENV_CLIENT_ID: ${{ secrets.CLIENT_ID}}
       - name: Use MongoDB from Github actions
         uses: supercharge/mongodb-github-action@1.6.0
         with:
